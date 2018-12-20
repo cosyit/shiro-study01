@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cosyit</groupId>
+    <artifactId>shiro-study</artifactId>
+    <version>1.0.0</version>
+
+
+    <dependencies>
+        <!-- Fixme SLF4J很快就会成为Java世界里标准的日志记录库! （Simple Logging Facade for Java），不是具体的日志解决方案，它只服务于各种各样的日志系统。-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
+        <!-- shiro 需要的jar包4 -->
+        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-all -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
