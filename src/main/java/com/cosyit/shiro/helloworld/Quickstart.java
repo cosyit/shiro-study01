@@ -34,18 +34,25 @@ public class Quickstart {
         //get currently executing user.获取当前操作的用户Subject. __Equivalence__ 等价于
         //fixme 重要等级 *****
         Subject subject__Equivalence__CurrentUser = SecurityUtils.getSubject();
+        //接下来给大家讲一个故事，subject 用户的故事。一切的故事，都是从这个subject用户 围绕展开的。
+
 
         //测试使用session , 即便没有web容器 和 EJB容器 的情况下，也可以使用session.
         Session session = subject__Equivalence__CurrentUser.getSession();
         //session 就类似web 中的session，可以取存数据。
-        session.setAttribute("k1", "v1");
+        session.setAttribute("对象A", "偶遇一位雍容华贵的少妇 spring security Manager.");
+        session.setAttribute("对象B", "偶遇一位美丽的动人，苗条的姑娘 shiro");
+        log.info("subject出过的对象:"+session.getAttributeKeys());
+        log.info("发现并不合适,决定分手！");
+        session.removeAttribute("对象A");
         String value = (String) session.getAttribute("k1");
         System.out.println(value);
         //已演示了session的存取，是不是和web的session一样的代码。
 
 
         //fixme 重要等级 *****
-        //测试当前的用户是否已经被认证。即是否已经登录。 如果没有被认证，创建一个token令牌，并且让系统记住。
+        //测试当前的用户是否已经被认证。即是否已经登录。
+        //登录前是不会被认证的，只有登录后，才会被认证。
         if (!subject__Equivalence__CurrentUser.isAuthenticated()) {
             UsernamePasswordToken token = new UsernamePasswordToken("dawei.wang.o", "root");
             token.setRememberMe(true); //这个代码什么意思，不能瞎猜，先放在这里，下次我再讲。
@@ -85,8 +92,6 @@ public class Quickstart {
             subject__Equivalence__CurrentUser.logout();
 
             System.exit(0);
-
-
         }
 
     }
